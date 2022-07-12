@@ -36,4 +36,4 @@ for tar in tqdm(pipe(KeyDataset(dataset, 'file'))):
 
 # %%
 metric = WordErrorRate()
-print('WER', metric(preds, targets))
+print(f'WER: {metric(preds, targets) * 100}')
