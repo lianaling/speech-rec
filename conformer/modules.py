@@ -1,4 +1,4 @@
-from torch import nn
+import torch.nn as nn
 from typing import Tensor
 
 class Transpose(nn.Module):

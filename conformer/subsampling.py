@@ -1,4 +1,4 @@
-from torch import nn
+import torch.nn as nn
 from typing import Tensor, Tuple
 
 class Conv2dSubsampling(nn.Module):
@@ -16,6 +16,7 @@ class Conv2dSubsampling(nn.Module):
         outputs = self.sequential(inputs.unsqueeze(1))
         batch_size, channels, subsampled_lengths, subsampled_dim = outputs.size()
 
+        # batch_size, subsampled_lengths, channels, subsampled_dim
         outputs = outputs.permute(0, 2, 1, 3)
         outputs = outputs.contiguous().view(batch_size, subsampled_lengths, channels * subsampled_dim)
 
