@@ -1,4 +1,6 @@
 venv-hf-asr/
-indonesian-w2v/malay-synthetic/*
-indonesian-w2v/english-synthetic/*
-indonesian-w2v/malay-youtube/*
+indonesian-w2v/malay-synthetic/
+indonesian-w2v/english-synthetic/
+indonesian-w2v/malay-youtube/
+indonesian-w2v/iium/audio-iium/
+indonesian-w2v/__MACOSX/
