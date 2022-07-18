@@ -1,8 +1,0 @@
-transformers
-datasets
-huggingface-hub
-ipykernel
-ipython
-jupyter-client
-jupyter-core
-wandb

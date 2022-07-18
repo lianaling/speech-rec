@@ -1,8 +1,0 @@
-#version: 0.2 - Trained by `huggingface/tokenizers`
-" :
-Ġ "
-Ġ 1
-Ġ 2
-] ":
-Ġ" [
-Ġ1 7
