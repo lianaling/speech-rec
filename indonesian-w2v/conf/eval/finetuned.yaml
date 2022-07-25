@@ -1,0 +1,3 @@
+model: 'wav2vec2-indonesian-malay/model'
+tokenizer: 'wav2vec2-indonesian-malay/tokenizer'
+result_dir: 'eval_results_postfinetune.csv'

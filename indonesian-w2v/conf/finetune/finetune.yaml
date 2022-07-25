@@ -1,0 +1,36 @@
+model:
+  training_param:
+    output_dir: 'wav2vec2-indonesian-malay/model'
+    best_output_dir: 'wav2vec2-indonesian-malay/model/best'
+    group_by_length: True
+    per_device_train_batch_size: 8
+    evaluation_strategy: 'steps'
+    num_train_epochs: 10
+    fp16: True
+    gradient_checkpointing: True
+    save_steps: 500
+    eval_steps: 500
+    logging_steps: 500
+    learning_rate: 1e-4
+    weight_decay: 0.005
+    warmup_steps: 1000
+    save_total_limit: 2
+
+# [Refer here for parameter choices](https://huggingface.co/blog/fine-tune-wav2vec2-english)
+tokenizer:
+  vocab_dict: 'tokenizers/vocab_dict.json'
+  param:
+    feature_size: 1
+    sampling_rate: 16000
+    padding_value: 0.0
+    do_normalize: True
+    return_attention_mask: False
+    save_directory: 'wav2vec2-indonesian-malay/tokenizer'
+
+# paths:
+#   root_dir: '${hydra:runtime.cwd}'
+#   data_dir: 'datasets'
+
+checkpoint:
+  model: 'indonesian-nlp/wav2vec2-large-xlsr-indonesian'
+  tokenizer: ${checkpoints.model}

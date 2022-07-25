@@ -1,0 +1,3 @@
+model: 'indonesian-nlp/wav2vec2-large-xlsr-indonesian'
+tokenizer: 'indonesian-nlp/wav2vec2-large-xlsr-indonesian'
+result_dir: 'eval_iium_train_prefinetune.csv'

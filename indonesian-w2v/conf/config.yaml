@@ -1,0 +1,16 @@
+defaults:
+  - eval: pretrained
+  - finetune: finetune
+
+path:
+  root_dir: '${hydra:runtime.cwd}'
+  data_dir: '${path.root_dir}/datasets'
+
+eval:
+  dataset: ${dataset.iium_clean_dev}
+
+dataset:
+  iium_clean_train: 'iium/iium-clean-train.csv'
+  iium_clean_dev: 'iium/iium-clean-dev.csv'
+  iium_clean_test: 'iium/iium-clean-test.csv'
+  malay_youtube: 'malay_youtube/malay_youtube.csv'

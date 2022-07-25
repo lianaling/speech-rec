@@ -3,4 +3,11 @@ indonesian-w2v/malay-synthetic/
 indonesian-w2v/english-synthetic/
 indonesian-w2v/malay-youtube/
 indonesian-w2v/iium/audio-iium/
-indonesian-w2v/__MACOSX/
+indonesian-w2v/iium/shuffled-iium.json
+indonesian-w2v/iium/__MACOSX/
+indonesian-w2v/wav2vec2-indonesian-malay/
+indonesian-w2v/outputs
+indonesian-w2v/modules/__pycache__
+indonesian-w2v/.mypy_cache
+indonesian-w2v/.vscode
+indonesian-w2v/wandb

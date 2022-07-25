@@ -1,0 +1,53 @@
+models:
+  training_params:
+    output_dir: 'wav2vec2-indonesian-malay/model'
+    best_output_dir: 'wav2vec2-indonesian-malay/model/best'
+    group_by_length: True
+    per_device_train_batch_size: 8
+    evaluation_strategy: 'steps'
+    num_train_epochs: 10
+    fp16: True
+    gradient_checkpointing: True
+    save_steps: 500
+    eval_steps: 500
+    logging_steps: 500
+    learning_rate: 1e-4
+    weight_decay: 0.005
+    warmup_steps: 1000
+    save_total_limit: 2
+
+datasets:
+  iium_clean_train: 'iium/iium-clean-train.csv'
+  iium_clean_dev: 'iium/iium-clean-dev.csv'
+  iium_clean_test: 'iium/iium-clean-test.csv'
+  malay_youtube: 'malay_youtube/malay_youtube.csv'
+
+# [Refer here for parameter choices](https://huggingface.co/blog/fine-tune-wav2vec2-english)
+tokenizers:
+  vocab_dict: 'tokenizers/vocab_dict.json'
+  params:
+    feature_size: 1
+    sampling_rate: 16000
+    padding_value: 0.0
+    do_normalize: True
+    return_attention_mask: False
+    save_directory: 'wav2vec2-indonesian-malay/tokenizer'
+
+paths:
+  root_dir: '${hydra:runtime.cwd}'
+  data_dir: 'datasets'
+
+checkpoints:
+  model: 'indonesian-nlp/wav2vec2-large-xlsr-indonesian'
+  tokenizer: 'indonesian-nlp/wav2vec2-large-xlsr-indonesian'
+
+# eval:
+#   model: 'wav2vec2-indonesian-malay/model'
+#   tokenizer: 'wav2vec2-indonesian-malay/tokenizer'
+#   result_dir: 'eval_results_postfinetune.json'
+
+eval:
+  model: 'indonesian-nlp/wav2vec2-large-xlsr-indonesian'
+  tokenizer: 'indonesian-nlp/wav2vec2-large-xlsr-indonesian'
+  result_dir: 'eval_iium_train_prefinetune.csv'
+  dataset: 'iium/iium-clean-train.csv'
